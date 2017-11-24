@@ -204,13 +204,13 @@ module.exports = class RedisStore {
             }));
     }
     async setLastSynced({ sent, received }) {
-        const args = {};
-        if (sent) {
-            args.sent = sent;
-        }
-        if (received) {
-            args.received = received;
-        }
+		const args = {};
+		if (sent != null) {
+			args.sent = sent;
+		}
+		if (received != null) {
+			args.received = received;
+		}
         return this.redis
             .hmset('lastsynced', args)
             .then(([sent, received]) => ({
