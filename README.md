@@ -15,7 +15,7 @@ const app = new Server(
 		supports: '1.x',
 		root: __dirname,
 		store: new RedisStore(/* configuration */)
-		})
+	})
 )
 
 app.auth((userId, token) => {
